@@ -2,22 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07b1f507-26b0-4dfe-962b-bd1fb0b11242" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/go-mongo-template.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/db/mongo.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/handlers/base.controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/handlers/product.controller.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/product.model.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repositories/product.repository.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/product.service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utility/common.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utility/errors.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utility/handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db/mongo.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/mongo.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +20,14 @@
   <component name="GOROOT" url="file:///usr/local/Cellar/go/1.15.6/libexec" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="GoLibraries">
     <option name="indexEntireGoPath" value="false" />
