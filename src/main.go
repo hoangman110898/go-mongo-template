@@ -4,8 +4,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"go-mongo-template/src/config"
 	"go-mongo-template/src/db"
-	"go-mongo-template/src/handlers"
-	products "go-mongo-template/src/services"
+	"go-mongo-template/src/routers"
 	"gopkg.in/mgo.v2"
 )
 
@@ -16,12 +15,7 @@ func main() {
 
 	dbSession.SetSafe(&mgo.Safe{})
 
-	productService := products.New(dbSession, conf)
-
 	app := fiber.New()
-	handlers.ProductRouter(productService, app)
-	app.Get("/", func(c *fiber.Ctx) error {
-		return c.Send([]byte("Connect success"))
-	})
+	router.ProductRoutes(app, dbSession, conf)
 	app.Listen(conf.Address)
 }

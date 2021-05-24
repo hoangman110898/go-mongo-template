@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07b1f507-26b0-4dfe-962b-bd1fb0b11242" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/routers/product.router.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db/mongo.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/db/mongo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/handlers/product.controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/handlers/product.controller.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/product.repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/product.repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/product.service.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/product.service.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

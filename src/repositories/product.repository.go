@@ -41,7 +41,7 @@ func (repository *ProductRepositoryImp) FindAll(_ context.Context) ([]*models.Pr
 
 func (repository *ProductRepositoryImp) FindOneById(_ context.Context, id string) (*models.Product, error) {
 	var product models.Product
-	query := bson.M{"_id": bson.ObjectIdHex(id)}
+	query := bson.M{"id": bson.ObjectIdHex(id)}
 	err := repository.collection().Find(query).One(&product)
 	return &product, err
 }
@@ -51,7 +51,7 @@ func (repository *ProductRepositoryImp) Update(_ context.Context, query, change 
 }
 
 func (repository *ProductRepositoryImp) Delete(_ context.Context, id string) error {
-	return repository.collection().RemoveId(id)
+	return repository.collection().RemoveId(bson.ObjectIdHex(id))
 }
 
 func (repository *ProductRepositoryImp) FindOne(_ context.Context, query interface{}) (*models.Product, error) {

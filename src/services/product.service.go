@@ -38,8 +38,7 @@ func (service *ProductServiceImp) FindOneById(ctx context.Context, id string) (*
 }
 
 func (service *ProductServiceImp) Update(ctx context.Context, id string, product *models.Product) error {
-	query := bson.M{"_id": id}
-
+	query := bson.M{"_id": bson.ObjectIdHex(id)}
 	customBson := &utility.CustomBson{}
 	change, err := customBson.Set(product)
 	if err != nil {
