@@ -16,6 +16,14 @@ func main() {
 	dbSession.SetSafe(&mgo.Safe{})
 
 	app := fiber.New()
-	router.ProductRoutes(app, dbSession, conf)
+	routers.ProductRoutes(app, dbSession, conf)
+	routers.CookieRouter(app)
+
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.JSON(fiber.Map{
+			"page": "Home Page",
+			"author": "Nguyễn Hoàng Mẫn",
+		})
+	})
 	app.Listen(conf.Address)
 }
