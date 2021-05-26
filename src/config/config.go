@@ -1,10 +1,17 @@
 package config
 
 import (
+	"crypto/rand"
+	"crypto/rsa"
 	"fmt"
 	"github.com/caarlos0/env"
 	"github.com/joho/godotenv"
 	"log"
+)
+
+
+var (
+	privateKey *rsa.PrivateKey
 )
 
 // Configuration contains static info required to run the apps
@@ -34,4 +41,17 @@ func NewConfig(files ...string) *Configuration {
 	}
 
 	return &conf
+}
+
+func GetPrivateKeyRsa() *rsa.PrivateKey {
+	return privateKey
+}
+
+func InitPrivateKeyRsa() {
+	rng := rand.Reader
+	var err error
+	privateKey, err = rsa.GenerateKey(rng, 2048)
+	if err != nil {
+		log.Fatalf("rsa.GenerateKey: %v", err)
+	}
 }

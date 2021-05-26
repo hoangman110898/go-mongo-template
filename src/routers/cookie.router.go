@@ -22,14 +22,6 @@ func CookieRouter(app *fiber.App) {
 	api := app.Group("/cookie", logger.New())
 
 	api.Get("/set", func(c *fiber.Ctx) error {
-		//c.Cookie(&fiber.Cookie{
-		//	Name: "token",
-		//	Value: "randomValue",
-		//	Expires: time.Now().Add(24*time.Minute),
-		//	HTTPOnly: true,
-		//	SameSite: "lax",
-		//})
-
 		cookie := new(fiber.Cookie)
 		cookie.Name = "token"
 		cookie.Value = "randomValue"
