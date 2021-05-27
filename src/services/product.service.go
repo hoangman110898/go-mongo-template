@@ -62,7 +62,7 @@ func (service *ProductServiceImp) FindOne(ctx context.Context, product *models.P
 	return service.repository.FindOne(find)
 }
 
-func New(db *mgo.Session, c *config.Configuration) ProductService {
+func NewProduct(db *mgo.Session, c *config.Configuration) ProductService {
 	return &ProductServiceImp{
 		db:         db,
 		config:     c,

@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07b1f507-26b0-4dfe-962b-bd1fb0b11242" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/models/user.model.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repositories/user.repository.gp.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/user.service.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utility/role.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/auth.common.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/handlers/user.handler.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/auth.service.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/handlers/product.controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/handlers/product.controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositories/product.repository.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/product.repository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/handlers/base.controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/handlers/base.handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/handlers/product.controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/handlers/product.handler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/user.repository.gp.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/user.repository.gp.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routers/auth.router.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/auth.router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routers/product.router.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/routers/product.router.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/product.service.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/product.service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/user.service.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/user.service.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utility/role.go" beforeDir="false" afterPath="$PROJECT_DIR$/src/utility/role.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,5 +108,16 @@
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/src/handlers/user.handler.go</url>
+          <line>18</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

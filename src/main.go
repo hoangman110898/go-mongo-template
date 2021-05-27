@@ -5,6 +5,7 @@ import (
 	"go-mongo-template/src/config"
 	"go-mongo-template/src/db"
 	"go-mongo-template/src/routers"
+	"go-mongo-template/src/services"
 	"gopkg.in/mgo.v2"
 )
 
@@ -17,9 +18,11 @@ func main() {
 
 	app := fiber.New()
 
+	services.GenPrivateKey()
+
 	routers.ProductRoutes(app, dbSession, conf)
 	routers.CookieRouter(app)
-	routers.AuthRouter(app)
+	routers.AuthRouter(app, dbSession, conf)
 
 	//app.Get("/", func(c *fiber.Ctx) error {
 	//	return c.JSON(fiber.Map{

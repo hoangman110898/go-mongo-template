@@ -20,3 +20,8 @@ type ProductReq struct {
 	Code  string `json:"code"`
 	Image string `json:"image"`
 }
+
+type LoginRequest struct {
+	Email string `json:"email"`
+	Password string `json:"password"`
+}

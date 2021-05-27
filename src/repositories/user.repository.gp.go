@@ -11,6 +11,7 @@ type UserRepository interface {
 	Create(*models.User) error
 	Update(interface{}, interface{}) error
 	Detail(string) error
+	FindByEmail(string) (*models.User, error)
 }
 
 type UserRepositoryImp struct {
@@ -33,6 +34,12 @@ func (repository *UserRepositoryImp) Update(query, change interface{}) error {
 func (repository *UserRepositoryImp) Detail(id string) error {
 	var user models.User
 	return repository.collection().Find(bson.M{"id": bson.ObjectIdHex(id)}).One(&user)
+}
+
+func (repository *UserRepositoryImp) FindByEmail(email string)  (*models.User, error) {
+	var user *models.User
+	err := repository.collection().Find(bson.M{"email": email}).One(&user)
+	return user, err
 }
 
 func NewUser(db *mgo.Session, c *config.Configuration) UserRepository {
