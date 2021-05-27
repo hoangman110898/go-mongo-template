@@ -1,7 +1,6 @@
 package repositories
 
 import (
-	"context"
 	"go-mongo-template/src/config"
 	"go-mongo-template/src/models"
 	"gopkg.in/mgo.v2"
@@ -9,13 +8,13 @@ import (
 )
 
 type ProductRepository interface {
-	Create(context.Context, *models.Product) error
-	FindAll(context.Context) ([]*models.Product, error)
-	FindOneById(context.Context, string) (*models.Product, error)
-	Update(context.Context, interface{}, interface{}) error
-	Delete(context.Context, string) error
-	FindOne(context.Context, interface{}) (*models.Product, error)
-	ProductIsExists(context.Context, interface{}) bool
+	Create(*models.Product) error
+	FindAll() ([]*models.Product, error)
+	FindOneById(string) (*models.Product, error)
+	Update(interface{}, interface{}) error
+	Delete(string) error
+	FindOne(interface{}) (*models.Product, error)
+	ProductIsExists(interface{}) bool
 }
 
 
@@ -29,45 +28,45 @@ func (repository *ProductRepositoryImp) collection() *mgo.Collection {
 }
 
 
-func (repository *ProductRepositoryImp) Create(_ context.Context, product *models.Product) error {
+func (repository *ProductRepositoryImp) Create(product *models.Product) error {
 	return repository.collection().Insert(product)
 }
 
-func (repository *ProductRepositoryImp) FindAll(_ context.Context) ([]*models.Product, error) {
+func (repository *ProductRepositoryImp) FindAll() ([]*models.Product, error) {
 	var products []*models.Product
 	err := repository.collection().Find(bson.M{}).All(&products)
 	return products, err
 }
 
-func (repository *ProductRepositoryImp) FindOneById(_ context.Context, id string) (*models.Product, error) {
+func (repository *ProductRepositoryImp) FindOneById(id string) (*models.Product, error) {
 	var product models.Product
 	query := bson.M{"id": bson.ObjectIdHex(id)}
 	err := repository.collection().Find(query).One(&product)
 	return &product, err
 }
 
-func (repository *ProductRepositoryImp) Update(_ context.Context, query, change interface{}) error {
+func (repository *ProductRepositoryImp) Update(query, change interface{}) error {
 	return repository.collection().Update(query, change)
 }
 
-func (repository *ProductRepositoryImp) Delete(_ context.Context, id string) error {
+func (repository *ProductRepositoryImp) Delete(id string) error {
 	return repository.collection().RemoveId(bson.ObjectIdHex(id))
 }
 
-func (repository *ProductRepositoryImp) FindOne(_ context.Context, query interface{}) (*models.Product, error) {
+func (repository *ProductRepositoryImp) FindOne(query interface{}) (*models.Product, error) {
 	var product models.Product
 	err := repository.collection().Find(query).One(&product)
 	return &product, err
 }
 
-func (repository *ProductRepositoryImp) ProductIsExists(ctx context.Context, query interface{}) bool {
-	_, err := repository.FindOne(ctx, query)
+func (repository *ProductRepositoryImp) ProductIsExists(query interface{}) bool {
+	_, err := repository.FindOne(query)
 	if err != nil {
 		return false
 	}
 	return true
 }
 
-func New(db *mgo.Session, c *config.Configuration) ProductRepository {
+func NewProduct(db *mgo.Session, c *config.Configuration) ProductRepository {
 	return &ProductRepositoryImp{db: db, config: c}
 }

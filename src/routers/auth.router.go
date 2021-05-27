@@ -12,9 +12,6 @@ import (
 )
 
 var (
-	// Obviously, this is just a test example. Do not do this in production.
-	// In production, you would have the private key and public key pair generated
-	// in advance. NEVER add a private key to any GitHub repo.
 	privateKey *rsa.PrivateKey
 )
 

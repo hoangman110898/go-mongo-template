@@ -1,4 +1,4 @@
-package products
+package services
 
 import (
 	"context"
@@ -26,15 +26,15 @@ type ProductServiceImp struct {
 }
 
 func (service *ProductServiceImp) Create(ctx context.Context, product *models.Product) error {
-	return service.repository.Create(ctx, product)
+	return service.repository.Create(product)
 }
 
 func (service *ProductServiceImp) FindAll(ctx context.Context) ([]*models.Product, error) {
-	return service.repository.FindAll(ctx)
+	return service.repository.FindAll()
 }
 
 func (service *ProductServiceImp) FindOneById(ctx context.Context, id string) (*models.Product, error) {
-	return service.repository.FindOneById(ctx, id)
+	return service.repository.FindOneById(id)
 }
 
 func (service *ProductServiceImp) Update(ctx context.Context, id string, product *models.Product) error {
@@ -44,11 +44,11 @@ func (service *ProductServiceImp) Update(ctx context.Context, id string, product
 	if err != nil {
 		return err
 	}
-	return service.repository.Update(ctx, query, change)
+	return service.repository.Update(query, change)
 }
 
 func (service *ProductServiceImp) Delete(ctx context.Context, id string) error {
-	return service.repository.Delete(ctx, id)
+	return service.repository.Delete(id)
 }
 
 func (service *ProductServiceImp) FindOne(ctx context.Context, product *models.Product) (*models.Product, error) {
@@ -59,13 +59,13 @@ func (service *ProductServiceImp) FindOne(ctx context.Context, product *models.P
 		return nil, err
 	}
 
-	return service.repository.FindOne(ctx, find)
+	return service.repository.FindOne(find)
 }
 
 func New(db *mgo.Session, c *config.Configuration) ProductService {
 	return &ProductServiceImp{
 		db:         db,
 		config:     c,
-		repository: repositories.New(db, c),
+		repository: repositories.NewProduct(db, c),
 	}
 }

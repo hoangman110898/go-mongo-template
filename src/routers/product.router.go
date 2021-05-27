@@ -5,12 +5,12 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"go-mongo-template/src/config"
 	"go-mongo-template/src/handlers"
-	products "go-mongo-template/src/services"
+	"go-mongo-template/src/services"
 	"gopkg.in/mgo.v2"
 )
 
 func ProductRoutes(app *fiber.App, dbSession *mgo.Session, conf *config.Configuration) {
-	productService := products.New(dbSession, conf)
+	productService := services.NewProduct(dbSession, conf)
 	productHandler := handlers.GetProductHandler(productService)
 
 	// -> middleware logs ip time and status
